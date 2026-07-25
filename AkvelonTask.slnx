@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="AkvelonTask.ConsoleApp/AkvelonTask.ConsoleApp.csproj" />
   <Project Path="AkvelonTask/AkvelonTask.csproj" />
 </Solution>

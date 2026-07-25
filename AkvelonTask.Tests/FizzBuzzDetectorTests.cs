@@ -13,7 +13,7 @@ namespace AkvelonTask.Tests
         {
             string input = "Mary had a little lamb";
 
-            FizzBuzzResult result = _detector.GetOverlappings(input);
+            FizzBuzzResult result = _detector.getOverlappings(input);
 
             Assert.Equal("Mary had Fizz little Buzz", result.OutputString);
             Assert.Equal(2, result.Count);
@@ -24,7 +24,7 @@ namespace AkvelonTask.Tests
         {
             string input = "a a a a a a a a a a a a a a a";
 
-            FizzBuzzResult result = _detector.GetOverlappings(input);
+            FizzBuzzResult result = _detector.getOverlappings(input);
 
             Assert.Equal(
                 "a a Fizz a Buzz Fizz a a Fizz Buzz a Fizz a a FizzBuzz",
@@ -36,7 +36,7 @@ namespace AkvelonTask.Tests
         [Fact]
         public void ShouldThrowExceptionWhenInputIsNull()
         {
-            var exception = Assert.Throws<ArgumentNullException>(() => _detector.GetOverlappings(null!));
+            var exception = Assert.Throws<ArgumentNullException>(() => _detector.getOverlappings(null!));
 
             Assert.StartsWith("Input cannot be null.", exception.Message);
         }
@@ -44,7 +44,7 @@ namespace AkvelonTask.Tests
         [Fact]
         public void ShouldThrowExceptionWhenInputIsSixCharacters()
         {
-            var exception = Assert.Throws<ArgumentException>(() => _detector.GetOverlappings("abcdef"));
+            var exception = Assert.Throws<ArgumentException>(() => _detector.getOverlappings("abcdef"));
 
             Assert.StartsWith("Input length must be between 7 and 100.", exception.Message);
         }
@@ -54,7 +54,7 @@ namespace AkvelonTask.Tests
         {
             string input = new string('a', 101); 
 
-            var exception = Assert.Throws<ArgumentException>(() => _detector.GetOverlappings(input));
+            var exception = Assert.Throws<ArgumentException>(() => _detector.getOverlappings(input));
 
             Assert.StartsWith("Input length must be between 7 and 100.", exception.Message);
         }
@@ -64,7 +64,7 @@ namespace AkvelonTask.Tests
         {
             string input = "One, two! three?";
 
-            FizzBuzzResult result = _detector.GetOverlappings(input);
+            FizzBuzzResult result = _detector.getOverlappings(input);
 
             Assert.Equal("One, two! Fizz?", result.OutputString);
             Assert.Equal(1, result.Count);
@@ -75,7 +75,7 @@ namespace AkvelonTask.Tests
         {
             string input = "It's a nice day today";
 
-            FizzBuzzResult result = _detector.GetOverlappings(input);
+            FizzBuzzResult result = _detector.getOverlappings(input);
 
             Assert.Equal("It's a Fizz day Buzz", result.OutputString);
             Assert.Equal(2, result.Count);

@@ -3,14 +3,14 @@ using System.Text;
 
 namespace AkvelonTask
 {
-public class FizzBuzzDetector
+public class FizzBuzzDetector 
     {
         /// <summary>
         /// This method applies the FizzBuzz replacement rules to the given input.
         /// Its input is the text to process.
         /// It returns the processed output and replacement count.
         /// </summary>
-        public FizzBuzzResult GetOverlappings(string input)
+        public FizzBuzzResult getOverlappings(string input)
         {
             ValidateInput(input);
 
